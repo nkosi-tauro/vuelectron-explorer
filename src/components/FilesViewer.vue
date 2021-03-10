@@ -43,5 +43,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.clickable {
+  cursor: pointer;
+}
+.icon-row {
+  width: 2em;
+}
+.icon-folder {
+  width: 1em;
+}
+.icon-file {
+  width: 0.75em;
+}
 </style>
