@@ -49,10 +49,17 @@ export default {
     const open = folder => {
       path.value = pathModule.join(path.value, folder)
     }
+    
+    // Search
+    const searchString = ref("")
+    const filteredFiles = computed(() => {
+      return searchString.value
+        ? files.value.filter(s => s.name.startsWith(searchString.value))
+        : files.value
 
-  
+    })
 
-    return {}
+    return {path, open, back, files, searchString, filteredFiles}
   }
 }
 </script>
