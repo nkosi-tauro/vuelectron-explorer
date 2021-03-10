@@ -1,4 +1,5 @@
 <template>
+  <particles-bg type="circle" :bg="true" />
   <div class="container mt-2">
     <h4>{{path}}</h4>
     <div class="form-group mt-4 mb-2">
@@ -14,6 +15,8 @@ import fs from 'fs';
 import pathModule from 'path';
 import {computed, ref} from 'vue';
 import {app} from '@electron/remote'
+import { ParticlesBg } from "particles-bg-vue";
+
 
 // convert size into readable units
 const formatSize = size => {
@@ -24,7 +27,7 @@ const formatSize = size => {
 } 
 
 export default {
-  components : {FilesViewer},
+  components : {FilesViewer, ParticlesBg},
   setup(){
     const path = ref(app.getAppPath())
     const files = computed(() => {
