@@ -1,6 +1,13 @@
 <template>
     <table class="table">
         <tbody>
+            <tr class="clickable">
+                <td class="icon-row">
+                    <IconFolderOpen class="icon-folder"/>
+                </td>
+                <td>...</td>
+                <td></td>
+            </tr>
             <tr v-for="file in files" :key="file.name" :class="{clickable : file.directory}"
             @click="onFileClick(file)">
                 <td class="icon-row">
