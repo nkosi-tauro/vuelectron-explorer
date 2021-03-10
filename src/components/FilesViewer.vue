@@ -1,7 +1,17 @@
 <template>
-    <div>
-
-    </div>
+    <table class="table">
+        <tbody>
+            <tr v-for="file in files" :key="file.name" :class="{clickable : file.directory}"
+            @click="onFileClick(file)">
+                <td class="icon-row">
+                    <IconFolder v-if="file.directory" class="icon-folder"/>
+                    <IconFile v-else class="icon-file"/>
+                </td>
+                <td>{{file.name}}</td>
+                <td><span class="float-end">{{file.size}}</span></td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 
 <script lang="ts">
@@ -16,9 +26,11 @@ export default defineComponent({
     },
     components: {IconFile, IconFolder, IconFolderOpen},
     setup (_, {emit}) {
-        
+        const onFileClick = file => {
+            if (file.directory) emit('folderClick', file)
+        }
 
-        return {}
+        return {onFileClick}
     }
 })
 </script>
