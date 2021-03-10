@@ -4,10 +4,12 @@
     <div class="form-group mt-4 mb-2">
       <input class="form-control form-control-sm" placeholder="File search">
     </div>
+    <FilesViewer :files="filteredFiles" @back='back' @folderclick='open($event.name)'/>
   </div>
 </template>
 
 <script>
+import FilesViewer from './components/FilesViewer.vue'
 import fs from 'fs';
 import pathModule from 'path';
 import {computed, ref} from 'vue';
@@ -22,6 +24,7 @@ const formatSize = size => {
 } 
 
 export default {
+  components : {FilesViewer},
   setup(){
     const path = ref(app.getAppPath())
     const files = computed(() => {
