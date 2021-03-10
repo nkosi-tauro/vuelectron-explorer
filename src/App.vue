@@ -2,9 +2,9 @@
   <div class="container mt-2">
     <h4>{{path}}</h4>
     <div class="form-group mt-4 mb-2">
-      <input class="form-control form-control-sm" placeholder="File search">
+      <input v-model='searchString' class="form-control form-control-sm" placeholder="File search">
     </div>
-    <FilesViewer :files="filteredFiles" @back='back' @folderclick='open($event.name)'/>
+    <FilesViewer :files="filteredFiles" :nested="nested" @back='back' @folderclick='open($event.name)'/>
   </div>
 </template>
 
