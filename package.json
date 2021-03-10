@@ -12,6 +12,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@electron/remote": "^1.0.4",
     "bootstrap": "^5.0.0-beta2",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
