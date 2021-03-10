@@ -1,7 +1,7 @@
 <template>
     <table class="table">
         <tbody>
-            <tr class="clickable">
+            <tr class="clickable" @click="$emit('back')">
                 <td class="icon-row">
                     <IconFolderOpen class="icon-folder"/>
                 </td>
